@@ -1,12 +1,12 @@
 const {Webhook} = require("dis-logs")
 
-const logger = new Webhook("");
-logger.setName("Prueba 00011")
-logger.setAV("") //https://onlinejpgtools.com/convert-jpg-to-base64
+const Logger = new Webhook("https://discord.com/api/webhooks/902608272492757042/uOx96dd-iTg1CUF9SD7M19vVDV5fHtDoRBoAr_uZW-sBm-UOX1yizelQFWvR_FSxcqkd");
+Logger.setName("Prueba 00011")
+Logger.setAV("") //https://onlinejpgtools.com/convert-jpg-to-base64
 
 
-logger.send("0", "Non type error log!") //none
-logger.send("1", "Suceed type error log!")//sucess 
-logger.send("2", "Warning type error log!")//warning
-logger.send("3", "Error type error log!")//error
-logger.send("None type error log!") //test
+Logger.send("0", "Non type log!")                   //Non type error log!
+Logger.send("1", "Sucess type log!")                //Sucess type log!
+Logger.send("2", "Warning type log!")               //Warning type log!
+Logger.send("3", "Error type log!")                 //Error type log!
+Logger.send("None type log!")                       //None type log!

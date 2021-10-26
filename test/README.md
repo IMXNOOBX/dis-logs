@@ -22,4 +22,4 @@ Logger.send("None type log!")                       //None type log!
 ```
 #### `Image`
 
-![alt text](https://media.discordapp.net/attachments/852256383001034782/902622182067277914/unknown.png?width=411&height=436)
+![alt text](https://cdn.discordapp.com/attachments/780313867300896798/902623007518900245/unknown.png)
