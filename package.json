@@ -1,0 +1,26 @@
+{
+  "name": "dis-logs",
+  "version": "1.1.5",
+  "description": "Simple Discord Webhook logger for your app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IMXNOOBX/dis-logs.git"
+  },
+  "keywords": [
+    "logs"
+  ],
+  "author": "IMXNOOBX",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IMXNOOBX/dis-logs/issues"
+  },
+  "homepage": "https://github.com/IMXNOOBX/dis-logs#readme",
+  "dependencies": {
+    "@aero/centra": "^1.0.7",
+    "node-fetch": "^3.0.0"
+  }
+}
