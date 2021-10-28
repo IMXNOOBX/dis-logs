@@ -14,10 +14,18 @@ Logger.setName("WENHOOK_NAME")
 Logger.setAV("") //https://onlinejpgtools.com/convert-jpg-to-base64
 
 
-Logger.send("0", "Non type log!")                   //Non type error log!
+Logger.send("0", "Non type log!")                   //Non type log!
+Logger.send("none", "Non type log!")                   //Non type log!
+
 Logger.send("1", "Sucess type log!")                //Sucess type log!
+Logger.send("sucess", "Sucess type log!")                //Sucess type log!
+
 Logger.send("2", "Warning type log!")               //Warning type log!
+Logger.send("warning", "Warning type log!")               //Warning type log!
+
 Logger.send("3", "Error type log!")                 //Error type log!
+Logger.send("errored", "Error type log!")                 //Error type log!
+
 Logger.send("None type log!")                       //None type log!
 ```
 #### `Image`
