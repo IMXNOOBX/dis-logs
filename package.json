@@ -1,6 +1,6 @@
 {
   "name": "dis-logs",
-  "version": "1.2.0",
+  "version": "1.2.5",
   "description": "Simple Discord Webhook logger for your app",
   "main": "index.js",
   "scripts": {

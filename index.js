@@ -97,7 +97,7 @@ class Webhook{
             sendEmbed(this.url, content)
             logNone(content)
         }
-        else if (type == "1" || type == "sucess"){//----------------------------------------------------> Sucess
+        else if (type == "1" || type == "success"){//----------------------------------------------------> Success
             sendEmbed(this.url, content, 6487842)
             logSucces(content)
         }
@@ -105,7 +105,7 @@ class Webhook{
             sendEmbed(this.url, content, 15466274)
             logWarn(content)
         }
-        else if (type == "3" || type == "errored"){//----------------------------------------------------> Errored
+        else if (type == "3" || type == "error"){//----------------------------------------------------> Error
             sendEmbed(this.url, content, 16720418)
             logErr(content)
         }
@@ -113,6 +113,21 @@ class Webhook{
             sendEmbed(this.url, type)
             logNone(type)
         }
+    }
+
+    async sendSuccess(content) { //----------------------------------------------------> Success
+        sendEmbed(this.url, content, 6487842)
+        logSucces(content)
+    }
+
+    async sendWarn(content) { //----------------------------------------------------> Warn
+        sendEmbed(this.url, content, 15466274)
+        logWarn(content)
+    }
+
+    async sendErr(content) { //----------------------------------------------------> Error
+        sendEmbed(this.url, content, 16720418)
+        logErr(content)
     }
 }
 
