@@ -6,12 +6,12 @@ Logger.setAV("") //https://onlinejpgtools.com/convert-jpg-to-base64
 
 
 
-Logger.send("none", "Non type log!")                   //Non type log!
+Logger.local("This log only will be printed in the Terminal!")                   //Non type log!
 
-Logger.sendSuccess("Non type log!")                  //Sucess type log!
+Logger.success("Non type log!")                                                  //Sucess type log!
 
-Logger.sendWarn("Warning type log!")                //Warning type log!
+Logger.warn("Warning type log!")                                                 //Warning type log!
 
-Logger.sendErr("Error type log!")                   //Error type log!
+Logger.error("Error type log!")                                                  //Error type log!
 
-Logger.send("None type log!")                       //None type log!
+Logger.send("None type log!")                                                    //None type log!

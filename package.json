@@ -1,6 +1,6 @@
 {
   "name": "dis-logs",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Simple Discord Webhook logger for your app",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/IMXNOOBX/dis-logs#readme",
   "dependencies": {
-    "@aero/centra": "^1.0.7",
+    "@aero/centra": "^1.0.8",
     "node-fetch": "^3.0.0"
   }
 }

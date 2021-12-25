@@ -51,7 +51,7 @@ async function sendEmbed(webhook, logText, embedColor  = null) {
                 timestamp: new Date(),
                 footer: {
                     text: '[dis-logs]',
-                    icon_url: 'https://github.com/IMXNOOBX.png',
+                    //icon_url: 'https://github.com/IMXNOOBX.png',
                 },
             }
         ],
@@ -88,46 +88,31 @@ class Webhook{
     async delete() {
         const res = await centra(this.url, 'DELETE').body().send('form');
         if (res.statusCode !== 204) { logNPM(`[Error] while sending through the webhook!\n\nDiscord response: ` + res.body.toString() + `\nWebhook url: ${this.url}\n`); return;}
-        logNPM("Webhook successfully deleted!")
+        logNPM("Webhook successfully deleted!");
     }
 
-
-    async send(type, content) {
-        if (type == "0" || type == "none"){ //----------------------------------------------------> NONE
-            sendEmbed(this.url, content)
-            logNone(content)
-        }
-        else if (type == "1" || type == "success"){//----------------------------------------------------> Success
-            sendEmbed(this.url, content, 6487842)
-            logSucces(content)
-        }
-        else if (type == "2" || type == "warning"){//----------------------------------------------------> Warn
-            sendEmbed(this.url, content, 15466274)
-            logWarn(content)
-        }
-        else if (type == "3" || type == "error"){//----------------------------------------------------> Error
-            sendEmbed(this.url, content, 16720418)
-            logErr(content)
-        }
-        else {
-            sendEmbed(this.url, type)
-            logNone(type)
-        }
+    async console(content) { //----------------------------------------------------> Local
+        logNone(content);
     }
 
-    async sendSuccess(content) { //----------------------------------------------------> Success
-        sendEmbed(this.url, content, 6487842)
-        logSucces(content)
+    async success(content) { //----------------------------------------------------> Success
+        sendEmbed(this.url, content, 6487842);
+        logSucces(content);
     }
 
-    async sendWarn(content) { //----------------------------------------------------> Warn
-        sendEmbed(this.url, content, 15466274)
-        logWarn(content)
+    async warn(content) { //----------------------------------------------------> Warn
+        sendEmbed(this.url, content, 15466274);
+        logWarn(content);
     }
 
-    async sendErr(content) { //----------------------------------------------------> Error
-        sendEmbed(this.url, content, 16720418)
-        logErr(content)
+    async error(content) { //----------------------------------------------------> Error
+        sendEmbed(this.url, content, 16720418);
+        logErr(content);
+    }
+
+    async send(content) { //----------------------------------------------------> Error
+        sendEmbed(this.url, type);
+        logNone(content);
     }
 }
 
