@@ -1,6 +1,6 @@
 const {Webhook} = require("dis-logs")
 
-const Logger = new Webhook("https://discord.com/api/webhooks/951108458206355496/33DeJM8wbmrP_6T39TUzXe8FUGGm0zH0q-pHpZ3_emibHgm-rfAUtU18nJ-V_Atc3BW5");
+const Logger = new Webhook("");
 Logger.setName("Test For The Documentation")
 //Logger.setAV("") //https://onlinejpgtools.com/convert-jpg-to-base64
 
