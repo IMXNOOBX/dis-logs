@@ -111,7 +111,7 @@ class Webhook{
     }
 
     async send(content) { //----------------------------------------------------> Error
-        sendEmbed(this.url, type);
+        sendEmbed(this.url, content);
         logNone(content);
     }
 }
