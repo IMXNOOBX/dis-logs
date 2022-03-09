@@ -11,4 +11,4 @@ Install the package by running the command in your terminal.
 
 ### `how to use!`
 
-Check out the full documentation at [docs.imxnoobx.xyz](https://docs.imxnoobx.xyz/dis-logs)
+Check out the full documentation at [**docs.imxnoobx.xyz**](https://docs.imxnoobx.xyz/dis-logs)
