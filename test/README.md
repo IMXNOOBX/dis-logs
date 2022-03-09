@@ -9,20 +9,20 @@ Install the package by running the command in your terminal.
 ```js
 const { Webhook } = require("dis-logs")
 
-const Logger = new Webhook("YOUR_WEBHOOK");
-Logger.setName("WENHOOK_NAME")
+const Logger = new Webhook("https://discord.com/api/webhooks/951108458206355496/33DeJM8wbmrP_6T39TUzXe8FUGGm0zH0q-pHpZ3_emibHgm-rfAUtU18nJ-V_Atc3BW5");
+Logger.setName("Test For The Documentation")
 Logger.setAV("") //https://onlinejpgtools.com/convert-jpg-to-base64
 
 
-Logger.local("This log only will be printed in the Terminal!")                   //Non type log!
+Logger.console("This log only will be printed in the Terminal!")
 
-Logger.success("Success type log!")                                              //Sucess type log!
+Logger.success("This will be sent with a green success color")
 
-Logger.warn("Warning type log!")                                                 //Warning type log!
+Logger.warn("This will be sent with a yellow warn color")
 
-Logger.error("Error type log!")                                                  //Error type log!
+Logger.error("This will be sent with a red error color")
 
-Logger.send("None type log!")                                                    //Non type log!
+Logger.send("This will be sent without any color") 
 ```
 #### `Image`
 

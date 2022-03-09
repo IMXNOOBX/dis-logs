@@ -10,7 +10,7 @@ config.json
 
 # Builds
 /build
-#/test
+/test
 /release
 /debug
 /bin
