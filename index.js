@@ -65,6 +65,8 @@ class Webhook{
 
     constructor(url) {
         this.url = url;
+        if(!this.url)
+            throw Error ("No webhook url provided!");
     }
 
     async setName(name = null) {
