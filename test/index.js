@@ -1,17 +1,59 @@
-const {Webhook} = require("dis-logs")
+const { Webhook } = require('../index'); // Here you would use require('dis-logs') instead
+const { image } = require('./image');
 
-const Logger = new Webhook("");
-Logger.setName("Test For The Documentation")
-//Logger.setAV("") //https://onlinejpgtools.com/convert-jpg-to-base64
+async function main() {
+    if (process.argv.length < 3) {
+        throw new Error("Please provide a webhook URL as an argument.");
+    }
 
+    const log = new Webhook(process.argv[2]);
 
+	/**
+	 * @description set the name of the webhook
+	 */
+    log.set_name("Test For The Documentation");
 
-Logger.console("This log only will be printed in the Terminal!")                   //Non type log!
+	/**
+	 * @description set the avatar of the webhook
+	 * @see https://onlinejpgtools.com/convert-jpg-to-base64 to convert your image to base64
+	 */
+    log.set_avatar(image);
 
-Logger.success("This will be sent with a green success color")                                                  //Sucess type log!
+	// Wait for the avatar to be set and avoid rate limits
+	await sleep(3000);
 
-Logger.warn("This will be sent with a yellow warn color")                                                 //Warning type log!
+    /**
+	 * @description locally log to the console
+	 */
+    log.console("This log only will be printed in the Terminal!");
 
-Logger.error("This will be sent with a red error color")                                                  //Error type log!
+	/**
+	 * @description log a success type log to discord
+	 */
+    log.success("This will be sent with a green success color");
+    await sleep(1000);
 
-Logger.send("This will be sent without any color")                                                    //None type log!
+    /**
+	 * @description log a warning type log to discord
+	 */
+    log.warn("This will be sent with a yellow warn color");
+    await sleep(1000);
+
+	/**
+	 * @description log a error type log to discord
+	 */
+    log.error("This will be sent with a red error color");
+    await sleep(1000);
+
+    /**
+	 * @description log to discord
+	 */
+    log.send("This will be sent without any color");
+    await sleep(1000);
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+main().catch(error => console.error(error));
