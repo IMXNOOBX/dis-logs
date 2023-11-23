@@ -1,14 +1,13 @@
-# dis-logs
+# 🧶 dis-logs
 
-This is my first mpn package!
-It can be use for log your bots through a discord wenhook! You can download it from [here](https://www.npmjs.com/package/dis-logs)
+Welcome to dis-logs, a simple npm package designed to facilitate logging for your Discord bots through a Discord webhook. This package allows you to easily integrate logging functionality into your applications. This was my first npm package, so I hope you enjoy it!
 
-## To Start This Project
+# 🎋 Quick Start
 
-### `npm i dis-logs`
+* Install the package by running the command in your terminal.
+* ### `npm i dis-logs`
 
-Install the package by running the command in your terminal.
 
-### `how to use!`
+# 📍 How to use!
 
-Check out the full documentation at [**docs.imxnoobx.xyz**](https://docs.imxnoobx.xyz/dis-logs)
+Check out the full documentation at [**docs.imxnoobx.com**](https://docs.imxnoobx.com/dis-logs/)
