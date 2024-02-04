@@ -25,12 +25,14 @@ class Webhook {
      * @param {string} webhook_url - The Discord webhook URL.
      * @param {string} name - Name for the discord webhook.
      * @param {string} avatar - Base64 encoded image to set.
+     * @param {boolean} console - Whether to log to the console or not.
      */
-    constructor(webhook_url, name, avatar) {
+    constructor(webhook_url, name, avatar, console = true) {
         if (!webhook_url) 
             console.warn("Warning: No webhook URL provided. The library will just log locally.");
 
         this.url = webhook_url;
+        this.cout = console;
 
         if (name)
             this.set_name(name);
@@ -184,7 +186,7 @@ class Webhook {
         }).header('Content-Type', 'application/json').send('form');
 
         if (res.statusCode !== 200) 
-            this._log_npm(`[Error] Discord api returned invalid status code for ${this.url}\nDiscord response: ${res.body.toString()}`);
+            this._log_npm(`[Error] Discord api returned invalid status code for ${this.url}`, `\tDiscord response: ${res.body.toString()}`);
     }
 
     /**
@@ -205,7 +207,9 @@ class Webhook {
      */
     async success(content) {
         this._send_embed(content, 6487842);
-        this._log_success(content);
+
+        if (this.cout)
+            this._log_success(content);
     }
 
     /**
@@ -216,7 +220,8 @@ class Webhook {
      */
     async warn(content) {
         this._send_embed(content, 15466274);
-        this._log_warn(content);
+        if (this.cout)
+            this._log_warn(content);
     }
 
     /**
@@ -227,7 +232,8 @@ class Webhook {
      */
     async error(content) {
         this._send_embed(content, 16720418);
-        this._log_error(content);
+        if (this.cout)
+            this._log_error(content);
     }
 
     /**
@@ -238,7 +244,8 @@ class Webhook {
      */
     async send(content) {
         this._send_embed(content);
-        this._log_none(content);
+        if (this.cout)
+            this._log_none(content);
     }
 }
 
