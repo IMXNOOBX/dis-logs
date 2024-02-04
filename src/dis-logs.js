@@ -25,14 +25,14 @@ class Webhook {
      * @param {string} webhook_url - The Discord webhook URL.
      * @param {string} name - Name for the discord webhook.
      * @param {string} avatar - Base64 encoded image to set.
-     * @param {boolean} console - Whether to log to the console or not.
+     * @param {boolean} cout - Whether to log to the console or not.
      */
-    constructor(webhook_url, name, avatar, console = true) {
+    constructor(webhook_url, name, avatar, cout = true) {
         if (!webhook_url) 
             console.warn("Warning: No webhook URL provided. The library will just log locally.");
 
         this.url = webhook_url;
-        this.cout = console;
+        this.cout = cout;
 
         if (name)
             this.set_name(name);
