@@ -72,6 +72,9 @@ class Webhook {
     async set_name(name = 'dis-logs') {
         if (name.length > 32) throw new Error('Webhook name cannot be longer than 32 characters!');
 
+        if (!this.url)
+            return this._log_npm(`[Error] No webhook url provided!`);
+
         const res = await centra(this.url, 'PATCH').body({
             name,
         }).header('Content-Type', 'application/json').send('form');
@@ -87,6 +90,9 @@ class Webhook {
      * @param {string|null} base64Avatar - The base64 encoded image for the avatar.
      */
     async set_avatar(base64Avatar = null) {
+        if (!this.url)
+            return this._log_npm(`[Error] No webhook url provided!`);
+
         const res = await centra(this.url, 'PATCH').body({
             avatar: base64Avatar ? `data:image/jpeg;base64,${base64Avatar}` : null,
         }).header('Content-Type', 'application/json').send('form');
@@ -101,6 +107,9 @@ class Webhook {
      * @async
      */
     async delete() {
+        if (!this.url)
+            return this._log_npm(`[Error] No webhook url provided!`);
+
         const res = await centra(this.url, 'DELETE').body().send('form');
 
         if (res.statusCode !== 204)

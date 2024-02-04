@@ -1,6 +1,6 @@
 declare module 'dis-logs' {
 	class Webhook {
-	  constructor(webhook_url: string, name?: string, avatar?: string, console?: boolean);
+	  constructor(webhook_url?: string, name?: string, avatar?: string, console?: boolean);
   
 	  set_name(name?: string): Promise<void>;
 	  set_avatar(base64Avatar?: string | null): Promise<void>;
