@@ -7,7 +7,7 @@
  *
  * @license
  * Apache License 2.0
- * See <https://www.apache.org/licenses/LICENSE-2.0> for the full license text.
+ * See <https://creativecommons.org/licenses/by-nc-nd/4.0/> for the full license text.
  *
  * @see https://www.spycolor.com/ to get the colors for the webhooks
  */
