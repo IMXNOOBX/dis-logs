@@ -136,7 +136,7 @@ class Webhook {
      * @param {string} texts - The log message.
      */
     _log_npm(...texts) {
-        console.log(`\x1b[31m[${this.get_time()}]\x1b[0m | `, ...texts);
+        console.log(`\x1b[31m[${this.get_time()}]\x1b[0m |`, ...texts);
     }
 
     /**
@@ -144,7 +144,7 @@ class Webhook {
      * @param {string} texts - The log message.
      */
     _log_none(...texts) {
-        console.log(`[${this.get_time()}] | `, ...texts);
+        console.log(`[${this.get_time()}] |`, ...texts);
     }
 
     /**
@@ -152,7 +152,7 @@ class Webhook {
      * @param {string} texts - The success message.
      */
     _log_success(...texts) {
-        console.log(`[\x1b[32m${this.get_time()}\x1b[0m] | `, ...texts);
+        console.log(`[\x1b[32m${this.get_time()}\x1b[0m] |`, ...texts);
     }
 
     /**
@@ -160,7 +160,7 @@ class Webhook {
      * @param {string} texts - The warning message.
      */
     _log_warn(...texts) {
-        console.log(`[\x1b[33m${this.get_time()}\x1b[0m] | `, ...texts);
+        console.log(`[\x1b[33m${this.get_time()}\x1b[0m] |`, ...texts);
     }
 
     /**
@@ -168,7 +168,7 @@ class Webhook {
      * @param {string} texts - The error message.
      */
     _log_error(...texts) {
-        console.log(`[\x1b[31m${this.get_time()}\x1b[0m] | `, ...texts);
+        console.log(`[\x1b[31m${this.get_time()}\x1b[0m] |`, ...texts);
     }
 
     /**
