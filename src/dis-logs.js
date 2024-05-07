@@ -26,13 +26,22 @@ class Webhook {
      * @param {string} name - Name for the discord webhook.
      * @param {string} avatar - Base64 encoded image to set.
      * @param {boolean} cout - Whether to log to the console or not.
+     * @param {boolean} discord - Whether to send logs to discord or not.
      */
-    constructor(webhook_url, name, avatar, cout = true) {
-        if (!webhook_url) 
+    constructor(
+        webhook_url, 
+        name, 
+        avatar, 
+        cout = true,
+        discord = true
+    ) {
+
+        if (!webhook_url && discord) 
             console.warn("Warning: No webhook URL provided. The library will just log locally.");
 
         this.url = webhook_url;
         this.cout = cout;
+        this.enabled = discord;
 
         if (name)
             this.set_name(name);
@@ -160,7 +169,7 @@ class Webhook {
      * @param {string} texts - The warning message.
      */
     _log_warn(...texts) {
-        console.log(`[\x1b[33m${this.get_time()}\x1b[0m] |`, ...texts);
+        console.warn(`[\x1b[33m${this.get_time()}\x1b[0m] |`, ...texts);
     }
 
     /**
@@ -168,7 +177,7 @@ class Webhook {
      * @param {string} texts - The error message.
      */
     _log_error(...texts) {
-        console.log(`[\x1b[31m${this.get_time()}\x1b[0m] |`, ...texts);
+        console.error(`[\x1b[31m${this.get_time()}\x1b[0m] |`, ...texts);
     }
 
     /**
@@ -178,7 +187,10 @@ class Webhook {
      * @returns {Promise<void>} A promise that resolves after sending the embed.
      */
     async _send_embed(logText, embedColor = null) {
-        if (!this.url)
+        if (
+            !this.url ||
+            !this.enabled
+        )
             return;
 
         const res = await centra(this.url + '?wait=true', 'POST').body({
@@ -229,6 +241,7 @@ class Webhook {
      */
     async warn(content) {
         this._send_embed(content, 15466274);
+
         if (this.cout)
             this._log_warn(content);
     }
@@ -241,6 +254,7 @@ class Webhook {
      */
     async error(content) {
         this._send_embed(content, 16720418);
+
         if (this.cout)
             this._log_error(content);
     }
@@ -253,6 +267,7 @@ class Webhook {
      */
     async send(content) {
         this._send_embed(content);
+
         if (this.cout)
             this._log_none(content);
     }

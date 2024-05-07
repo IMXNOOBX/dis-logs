@@ -2,16 +2,15 @@ const { Webhook } = require('../index'); // Here you would use require('dis-logs
 const { image } = require('./image');
 
 async function main() {
-    if (process.argv.length < 3) {
+    if (process.argv.length != 2) 
         throw new Error("Please provide a webhook URL as an argument.");
-    }
 
     const log = new Webhook(process.argv[2]);
 
 	/**
 	 * @description set the name of the webhook
 	 */
-    log.set_name("Test For The Documentation");
+    log.set_name("Test dis-logs");
 
 	/**
 	 * @description set the avatar of the webhook
